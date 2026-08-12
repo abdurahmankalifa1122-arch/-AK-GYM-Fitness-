@@ -1,0 +1,6 @@
+{
+  "name": "AK GYM",
+  "description": "World-Class Premium Gym Website for AK GYM in Addis Ababa, Ethiopia - Strength, Discipline, Results.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
