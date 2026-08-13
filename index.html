@@ -1,19 +1,1590 @@
-<!doctype html>
-<html lang="en" class="dark scroll-smooth">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AK GYM | Premium Fitness Club - Addis Ababa, Ethiopia</title>
-    <meta name="description" content="Build your strongest self at AK GYM. Addis Ababa's premier luxury gym. Strength, Discipline, Results." />
-    <link rel="icon" type="image/png" href="https://i.ibb.co/8gPTbPyv/Chat-GPT-Image-Aug-3-2026-12-48-38-AM-optimized-2000.png" />
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  </head>
-  <body class="bg-zinc-950 text-zinc-100 font-sans selection:bg-amber-500 selection:text-zinc-950 antialiased overflow-x-hidden">
-    <div id="root"></div>
-    <script type="module" src="./src/main.tsx"></script>
-  </body>
-</html>
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AK GYM - Strength, Discipline, Results | Addis Ababa, Ethiopia</title>
+  <meta name="description" content="Addis Ababa's premier fitness destination. Modern machinery, expert personal trainers, custom workout programs, and world-class gym facilities at Bole Medhanialem." />
 
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#fffbe1',
+              100: '#fff3b8',
+              200: '#ffe670',
+              300: '#ffd429',
+              400: '#ffbf00',
+              500: '#f59e0b',
+              600: '#d97706',
+              700: '#b45309',
+              800: '#92400e',
+              900: '#78350f',
+            },
+            skybrand: {
+              400: '#38bdf8',
+              500: '#0ea5e9',
+              600: '#0284c7',
+            }
+          },
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            display: ['Montserrat', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome 6 CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Custom Styles -->
+  <style>
+    body {
+      background-color: #09090b;
+      color: #f4f4f5;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    
+    .font-display {
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #09090b;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #27272a;
+      border-radius: 5px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #f59e0b;
+    }
+
+    /* Glassmorphism Effect */
+    .glass-card {
+      background: rgba(24, 24, 27, 0.75);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .glass-nav {
+      background: rgba(9, 9, 11, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(245, 158, 11, 0.15);
+    }
+
+    /* Glowing Accents */
+    .glow-amber {
+      box-shadow: 0 0 25px -5px rgba(245, 158, 11, 0.3);
+    }
+    
+    .glow-sky {
+      box-shadow: 0 0 25px -5px rgba(14, 165, 233, 0.3);
+    }
+
+    /* Animation Utilities */
+    @keyframes pulseSlow {
+      0%, 100% { opacity: 0.2; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(1.05); }
+    }
+    .animate-pulse-slow {
+      animation: pulseSlow 6s infinite ease-in-out;
+    }
+
+    /* Modal Backdrop */
+    .modal-backdrop {
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(8px);
+    }
+  </style>
+</head>
+<body class="bg-zinc-950 text-zinc-100 antialiased selection:bg-amber-500 selection:text-zinc-950">
+
+  <!-- ================= HEADER / NAVBAR ================= -->
+  <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      
+      <!-- Logo -->
+      <a href="#home" class="flex items-center gap-3 group">
+        <div class="w-[80px] h-[80px] rounded-xl bg-zinc-900/90 border border-amber-500/40 p-1 flex items-center justify-center overflow-hidden shadow-lg shadow-amber-500/20 group-hover:scale-105 group-hover:border-amber-400 transition-all duration-200 shrink-0">
+          <img 
+            src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=200" 
+            alt="AK GYM Logo" 
+            id="brandLogo"
+            class="w-[80px] h-[80px] object-cover rounded-lg filter drop-shadow" 
+            onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&q=80&w=200';"
+          />
+        </div>
+        <div class="flex flex-col">
+          <span class="font-display font-black text-2xl tracking-wider text-white flex items-center gap-1.5">
+            AK <span class="text-amber-500">GYM</span>
+          </span>
+          <span class="text-[10px] font-bold tracking-widest text-amber-500/90 uppercase -mt-1">
+            Addis Ababa
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden lg:flex items-center gap-8 bg-zinc-900/80 px-6 py-2.5 rounded-full border border-zinc-800/80 shadow-inner">
+        <a href="#home" class="text-sm font-semibold text-zinc-300 hover:text-amber-400 transition-colors">Home</a>
+        <a href="#why-us" class="text-sm font-semibold text-zinc-300 hover:text-amber-400 transition-colors">Why Us</a>
+        <a href="#exercises" class="text-sm font-semibold text-zinc-300 hover:text-amber-400 transition-colors">Exercises</a>
+        <a href="#trainers" class="text-sm font-semibold text-zinc-300 hover:text-amber-400 transition-colors">Trainers</a>
+        <a href="#pricing" class="text-sm font-semibold text-zinc-300 hover:text-amber-400 transition-colors">Pricing</a>
+        <a href="#gallery" class="text-sm font-semibold text-zinc-300 hover:text-amber-400 transition-colors">Gallery</a>
+        <a href="#testimonials" class="text-sm font-semibold text-zinc-300 hover:text-amber-400 transition-colors">Reviews</a>
+        <a href="#faq" class="text-sm font-semibold text-zinc-300 hover:text-amber-400 transition-colors">FAQ</a>
+        <a href="#contact" class="text-sm font-semibold text-zinc-300 hover:text-amber-400 transition-colors">Contact</a>
+      </nav>
+
+      <!-- Action Button & Mobile Menu Toggle -->
+      <div class="flex items-center gap-4">
+        <button 
+          onclick="openJoinModal('Pro Plan')"
+          class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-bold text-sm bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-zinc-950 shadow-lg shadow-amber-500/25 hover:shadow-amber-500/40 hover:-translate-y-0.5 transition-all duration-200"
+        >
+          <i class="fa-solid fa-bolt text-xs"></i>
+          <span>JOIN NOW</span>
+        </button>
+
+        <!-- Mobile Menu Button -->
+        <button 
+          id="mobileMenuBtn"
+          aria-label="Toggle Navigation Menu"
+          class="lg:hidden p-2.5 rounded-xl bg-zinc-900 border border-zinc-800 text-zinc-300 hover:text-amber-400 hover:border-amber-500/40 transition-colors"
+        >
+          <i class="fa-solid fa-bars text-xl" id="menuIcon"></i>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobileMenu" class="hidden lg:hidden mt-3 max-w-7xl mx-auto rounded-2xl glass-card border border-zinc-800 p-5 shadow-2xl space-y-3">
+      <a href="#home" onclick="closeMobileMenu()" class="block px-4 py-2.5 rounded-lg text-zinc-200 hover:bg-amber-500/10 hover:text-amber-400 font-semibold text-sm transition-colors">Home</a>
+      <a href="#why-us" onclick="closeMobileMenu()" class="block px-4 py-2.5 rounded-lg text-zinc-200 hover:bg-amber-500/10 hover:text-amber-400 font-semibold text-sm transition-colors">Why Choose Us</a>
+      <a href="#exercises" onclick="closeMobileMenu()" class="block px-4 py-2.5 rounded-lg text-zinc-200 hover:bg-amber-500/10 hover:text-amber-400 font-semibold text-sm transition-colors">Exercises & Guides</a>
+      <a href="#trainers" onclick="closeMobileMenu()" class="block px-4 py-2.5 rounded-lg text-zinc-200 hover:bg-amber-500/10 hover:text-amber-400 font-semibold text-sm transition-colors">Personal Trainers</a>
+      <a href="#pricing" onclick="closeMobileMenu()" class="block px-4 py-2.5 rounded-lg text-zinc-200 hover:bg-amber-500/10 hover:text-amber-400 font-semibold text-sm transition-colors">Membership Plans</a>
+      <a href="#gallery" onclick="closeMobileMenu()" class="block px-4 py-2.5 rounded-lg text-zinc-200 hover:bg-amber-500/10 hover:text-amber-400 font-semibold text-sm transition-colors">Gym Gallery</a>
+      <a href="#testimonials" onclick="closeMobileMenu()" class="block px-4 py-2.5 rounded-lg text-zinc-200 hover:bg-amber-500/10 hover:text-amber-400 font-semibold text-sm transition-colors">Member Reviews</a>
+      <a href="#faq" onclick="closeMobileMenu()" class="block px-4 py-2.5 rounded-lg text-zinc-200 hover:bg-amber-500/10 hover:text-amber-400 font-semibold text-sm transition-colors">FAQ</a>
+      <a href="#contact" onclick="closeMobileMenu()" class="block px-4 py-2.5 rounded-lg text-zinc-200 hover:bg-amber-500/10 hover:text-amber-400 font-semibold text-sm transition-colors">Contact Us</a>
+      <button 
+        onclick="closeMobileMenu(); openJoinModal('Standard Membership')"
+        class="w-full py-3 rounded-xl font-bold text-sm bg-gradient-to-r from-amber-500 to-amber-600 text-zinc-950 text-center shadow-md shadow-amber-500/20"
+      >
+        JOIN AK GYM TODAY
+      </button>
+    </div>
+  </header>
+
+  <!-- ================= HERO SECTION ================= -->
+  <section id="home" class="relative min-h-screen flex items-center pt-32 pb-20 overflow-hidden">
+    <!-- Ambient Lights -->
+    <div class="absolute top-1/4 -left-32 w-96 h-96 bg-amber-500/15 rounded-full blur-3xl pointer-events-none animate-pulse-slow"></div>
+    <div class="absolute bottom-10 -right-32 w-96 h-96 bg-skybrand-500/15 rounded-full blur-3xl pointer-events-none animate-pulse-slow"></div>
+
+    <!-- Background Image Overlay -->
+    <div class="absolute inset-0 z-0">
+      <img 
+        src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=1920" 
+        alt="AK GYM Floor" 
+        class="w-full h-full object-cover object-center opacity-25 filter grayscale"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/80 to-zinc-950/60"></div>
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <div class="max-w-3xl space-y-8">
+        
+        <!-- Location Pill Badge -->
+        <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-zinc-900/90 border border-amber-500/30 text-amber-400 text-xs font-bold tracking-wider uppercase shadow-lg shadow-amber-500/10">
+          <i class="fa-solid fa-location-dot text-amber-500"></i>
+          <span>Bole Medhanialem, Addis Ababa, Ethiopia</span>
+        </div>
+
+        <!-- Hero Headline -->
+        <h1 class="font-display font-black text-4xl sm:text-6xl lg:text-7xl tracking-tight text-white leading-[1.1]">
+          UNLEASH YOUR <br/>
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-amber-500 to-amber-200">
+            ULTIMATE POTENTIAL
+          </span>
+        </h1>
+
+        <!-- Hero Description -->
+        <p class="text-lg sm:text-xl text-zinc-300 font-normal leading-relaxed max-w-2xl">
+          Experience Addis Ababa's premier high-performance training sanctuary. Equipped with world-class Hammer Strength & Rogue machinery, expert certified coaches, and customized strength & transformation programs.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
+          <button 
+            onclick="openJoinModal('Free 1-Day Pass')"
+            class="px-8 py-4 rounded-xl font-bold text-base bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-zinc-950 shadow-xl shadow-amber-500/30 hover:shadow-amber-500/50 hover:-translate-y-1 transition-all duration-200 flex items-center justify-center gap-3"
+          >
+            <span>CLAIM FREE TRIAL DAY</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+          <a 
+            href="#exercises"
+            class="px-8 py-4 rounded-xl font-bold text-base bg-zinc-900/90 hover:bg-zinc-800 border border-zinc-700/80 text-zinc-200 hover:text-white transition-all duration-200 text-center flex items-center justify-center gap-2"
+          >
+            <i class="fa-solid fa-dumbbell text-amber-500"></i>
+            <span>EXPLORE WORKOUTS</span>
+          </a>
+        </div>
+
+        <!-- Key Features Strip -->
+        <div class="pt-8 border-t border-zinc-800/80 grid grid-cols-2 sm:grid-cols-3 gap-6">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 font-bold shrink-0">
+              <i class="fa-solid fa-clock"></i>
+            </div>
+            <div>
+              <div class="text-sm font-bold text-white">6 AM - 10 PM</div>
+              <div class="text-xs text-zinc-400">Open 7 Days a Week</div>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 font-bold shrink-0">
+              <i class="fa-solid fa-award"></i>
+            </div>
+            <div>
+              <div class="text-sm font-bold text-white">Certified Trainers</div>
+              <div class="text-xs text-zinc-400">1-on-1 Personal Guidance</div>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-3 col-span-2 sm:col-span-1">
+            <div class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 font-bold shrink-0">
+              <i class="fa-solid fa-bath"></i>
+            </div>
+            <div>
+              <div class="text-sm font-bold text-white">Steam & Sauna</div>
+              <div class="text-xs text-zinc-400">Recovery Spa Included</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= STATS COUNTER SECTION ================= -->
+  <section class="py-12 bg-zinc-900/60 border-y border-zinc-800/80 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        
+        <div class="p-4">
+          <div class="font-display font-black text-4xl sm:text-5xl text-amber-500 mb-1" id="stat-members">1500+</div>
+          <div class="text-xs sm:text-sm font-bold text-zinc-400 uppercase tracking-wider">Active Members</div>
+        </div>
+
+        <div class="p-4">
+          <div class="font-display font-black text-4xl sm:text-5xl text-amber-500 mb-1" id="stat-trainers">15+</div>
+          <div class="text-xs sm:text-sm font-bold text-zinc-400 uppercase tracking-wider">Expert Coaches</div>
+        </div>
+
+        <div class="p-4">
+          <div class="font-display font-black text-4xl sm:text-5xl text-amber-500 mb-1" id="stat-machines">100+</div>
+          <div class="text-xs sm:text-sm font-bold text-zinc-400 uppercase tracking-wider">Modern Machines</div>
+        </div>
+
+        <div class="p-4">
+          <div class="font-display font-black text-4xl sm:text-5xl text-amber-500 mb-1" id="stat-rate">98%</div>
+          <div class="text-xs sm:text-sm font-bold text-zinc-400 uppercase tracking-wider">Goal Success Rate</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= WHY CHOOSE US ================= -->
+  <section id="why-us" class="py-24 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-amber-500 text-xs font-bold tracking-widest uppercase">THE AK GYM DIFFERENCE</span>
+        <h2 class="font-display font-black text-3xl sm:text-5xl text-white mt-2 mb-4">
+          WHY TRAIN WITH US?
+        </h2>
+        <p class="text-zinc-400 text-base sm:text-lg">
+          We combine cutting-edge biomechanical fitness equipment with personalized coaching to create the ultimate atmosphere for physical transformation.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Feature 1 -->
+        <div class="glass-card rounded-2xl p-8 hover:border-amber-500/40 transition-all duration-300 group hover:-translate-y-1">
+          <div class="w-14 h-14 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 text-2xl mb-6 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-dumbbell"></i>
+          </div>
+          <h3 class="font-display font-bold text-xl text-white mb-3">Heavy-Duty Gym Gear</h3>
+          <p class="text-zinc-400 text-sm leading-relaxed">
+            Fully stacked with imported Rogue barbells, Hammer Strength plate-loaded machines, power racks, and dumbell racks up to 60kg.
+          </p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="glass-card rounded-2xl p-8 hover:border-amber-500/40 transition-all duration-300 group hover:-translate-y-1">
+          <div class="w-14 h-14 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 text-2xl mb-6 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-user-ninja"></i>
+          </div>
+          <h3 class="font-display font-bold text-xl text-white mb-3">Custom Personal Coaching</h3>
+          <p class="text-zinc-400 text-sm leading-relaxed">
+            Get paired with experienced IFBB & certified trainers who build tailored exercise routines based on your metabolic and body goals.
+          </p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="glass-card rounded-2xl p-8 hover:border-amber-500/40 transition-all duration-300 group hover:-translate-y-1">
+          <div class="w-14 h-14 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 text-2xl mb-6 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-apple-whole"></i>
+          </div>
+          <h3 class="font-display font-bold text-xl text-white mb-3">Nutrition & Meal Plans</h3>
+          <p class="text-zinc-400 text-sm leading-relaxed">
+            Custom macro tracking and nutritional meal guidance calibrated for weight loss, body recomposition, or rapid muscle hypertrophy.
+          </p>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="glass-card rounded-2xl p-8 hover:border-amber-500/40 transition-all duration-300 group hover:-translate-y-1">
+          <div class="w-14 h-14 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 text-2xl mb-6 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-hot-tub-person"></i>
+          </div>
+          <h3 class="font-display font-bold text-xl text-white mb-3">Steam & Sauna Recovery</h3>
+          <p class="text-zinc-400 text-sm leading-relaxed">
+            Accelerate muscle healing, flush toxins, and improve vascular blood flow in our luxury climate-controlled steam spa facilities.
+          </p>
+        </div>
+
+        <!-- Feature 5 -->
+        <div class="glass-card rounded-2xl p-8 hover:border-amber-500/40 transition-all duration-300 group hover:-translate-y-1">
+          <div class="w-14 h-14 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 text-2xl mb-6 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+          <h3 class="font-display font-bold text-xl text-white mb-3">Clean & Sanitized Environment</h3>
+          <p class="text-zinc-400 text-sm leading-relaxed">
+            Continuous ventilation, air purification, private locker rooms, rainfall showers, and strict daily sanitation standards.
+          </p>
+        </div>
+
+        <!-- Feature 6 -->
+        <div class="glass-card rounded-2xl p-8 hover:border-amber-500/40 transition-all duration-300 group hover:-translate-y-1">
+          <div class="w-14 h-14 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 text-2xl mb-6 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-users text-amber-400"></i>
+          </div>
+          <h3 class="font-display font-bold text-xl text-white mb-3">High-Energy Community</h3>
+          <p class="text-zinc-400 text-sm leading-relaxed">
+            Train alongside motivated, focused athletes and supportive members in an empowering, non-judgmental atmosphere.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= EXERCISES SHOWCASE ================= -->
+  <section id="exercises" class="py-24 bg-zinc-900/40 relative border-t border-zinc-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+        <div>
+          <span class="text-amber-500 text-xs font-bold tracking-widest uppercase">WORKOUT LIBRARY</span>
+          <h2 class="font-display font-black text-3xl sm:text-5xl text-white mt-2">
+            EXERCISES &amp; GUIDES
+          </h2>
+        </div>
+        <p class="text-zinc-400 text-sm sm:text-base max-w-md">
+          Explore our targeted muscle guides, movement cues, and form tutorials crafted by AK GYM coaches.
+        </p>
+      </div>
+
+      <!-- Filter Buttons -->
+      <div class="flex flex-wrap gap-2 sm:gap-3 mb-10" id="exerciseFilters">
+        <button onclick="filterExercises('all')" class="exercise-filter-btn px-5 py-2.5 rounded-full text-xs font-bold transition-all bg-amber-500 text-zinc-950 shadow-md shadow-amber-500/20" data-category="all">
+          All Exercises
+        </button>
+        <button onclick="filterExercises('chest')" class="exercise-filter-btn px-5 py-2.5 rounded-full text-xs font-bold transition-all bg-zinc-800 text-zinc-300 hover:bg-zinc-700" data-category="chest">
+          Chest &amp; Arms
+        </button>
+        <button onclick="filterExercises('back')" class="exercise-filter-btn px-5 py-2.5 rounded-full text-xs font-bold transition-all bg-zinc-800 text-zinc-300 hover:bg-zinc-700" data-category="back">
+          Back &amp; Core
+        </button>
+        <button onclick="filterExercises('legs')" class="exercise-filter-btn px-5 py-2.5 rounded-full text-xs font-bold transition-all bg-zinc-800 text-zinc-300 hover:bg-zinc-700" data-category="legs">
+          Legs &amp; Glutes
+        </button>
+        <button onclick="filterExercises('hiit')" class="exercise-filter-btn px-5 py-2.5 rounded-full text-xs font-bold transition-all bg-zinc-800 text-zinc-300 hover:bg-zinc-700" data-category="hiit">
+          Cardio &amp; HIIT
+        </button>
+      </div>
+
+      <!-- Exercises Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" id="exerciseGrid">
+        <!-- Injected via JavaScript -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= TRAINERS SECTION ================= -->
+  <section id="trainers" class="py-24 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-amber-500 text-xs font-bold tracking-widest uppercase">MEET OUR MASTERS</span>
+        <h2 class="font-display font-black text-3xl sm:text-5xl text-white mt-2 mb-4">
+          EXPERT PERSONAL TRAINERS
+        </h2>
+        <p class="text-zinc-400 text-base sm:text-lg">
+          Our certified coaches bring years of competitive bodybuilding, athletic strength conditioning, and biomechanical training expertise to every workout.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Trainer 1 -->
+        <div class="glass-card rounded-2xl overflow-hidden group hover:border-amber-500/50 transition-all duration-300">
+          <div class="relative h-80 overflow-hidden">
+            <img 
+              src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?auto=format&fit=crop&q=80&w=600" 
+              alt="Coach Robel" 
+              class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent"></div>
+            <span class="absolute bottom-4 left-4 px-3 py-1 rounded-md bg-amber-500 text-zinc-950 font-bold text-xs uppercase">
+              Head Coach
+            </span>
+          </div>
+          <div class="p-6">
+            <h3 class="font-display font-bold text-2xl text-white">Coach Robel Bekele</h3>
+            <p class="text-amber-500 text-xs font-bold uppercase tracking-wider mb-3">Hypertrophy &amp; Recomp Specialist</p>
+            <p class="text-zinc-400 text-sm mb-6 line-clamp-3">
+              10+ years coaching champion athletes and beginners in Addis Ababa. Focused on heavy compound movements, form correction, and body rebuilding.
+            </p>
+            <button 
+              onclick="openJoinModal('Personal Training with Coach Robel')"
+              class="w-full py-2.5 rounded-xl font-bold text-xs bg-zinc-800 hover:bg-amber-500 hover:text-zinc-950 text-zinc-200 transition-colors flex items-center justify-center gap-2"
+            >
+              <i class="fa-regular fa-calendar-check"></i>
+              <span>BOOK SESSION</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Trainer 2 -->
+        <div class="glass-card rounded-2xl overflow-hidden group hover:border-amber-500/50 transition-all duration-300">
+          <div class="relative h-80 overflow-hidden">
+            <img 
+              src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&q=80&w=600" 
+              alt="Coach Selam" 
+              class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent"></div>
+            <span class="absolute bottom-4 left-4 px-3 py-1 rounded-md bg-amber-500 text-zinc-950 font-bold text-xs uppercase">
+              Female Fitness Specialist
+            </span>
+          </div>
+          <div class="p-6">
+            <h3 class="font-display font-bold text-2xl text-white">Coach Selam Tadesse</h3>
+            <p class="text-amber-500 text-xs font-bold uppercase tracking-wider mb-3">Glute &amp; Core Transformation</p>
+            <p class="text-zinc-400 text-sm mb-6 line-clamp-3">
+              Specialized in female toning, body sculpt, post-natal rehabilitation, and nutritional macro coaching tailored for active lifestyle goals.
+            </p>
+            <button 
+              onclick="openJoinModal('Personal Training with Coach Selam')"
+              class="w-full py-2.5 rounded-xl font-bold text-xs bg-zinc-800 hover:bg-amber-500 hover:text-zinc-950 text-zinc-200 transition-colors flex items-center justify-center gap-2"
+            >
+              <i class="fa-regular fa-calendar-check"></i>
+              <span>BOOK SESSION</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Trainer 3 -->
+        <div class="glass-card rounded-2xl overflow-hidden group hover:border-amber-500/50 transition-all duration-300">
+          <div class="relative h-80 overflow-hidden">
+            <img 
+              src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=600" 
+              alt="Coach Dawit" 
+              class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent"></div>
+            <span class="absolute bottom-4 left-4 px-3 py-1 rounded-md bg-amber-500 text-zinc-950 font-bold text-xs uppercase">
+              Conditioning &amp; HIIT
+            </span>
+          </div>
+          <div class="p-6">
+            <h3 class="font-display font-bold text-2xl text-white">Coach Dawit Solomon</h3>
+            <p class="text-amber-500 text-xs font-bold uppercase tracking-wider mb-3">Fat Loss &amp; Athletic Power</p>
+            <p class="text-zinc-400 text-sm mb-6 line-clamp-3">
+              High-intensity interval training (HIIT), kettlebell functional training, cardiovascular stamina, and rapid fat burn specialist.
+            </p>
+            <button 
+              onclick="openJoinModal('Personal Training with Coach Dawit')"
+              class="w-full py-2.5 rounded-xl font-bold text-xs bg-zinc-800 hover:bg-amber-500 hover:text-zinc-950 text-zinc-200 transition-colors flex items-center justify-center gap-2"
+            >
+              <i class="fa-regular fa-calendar-check"></i>
+              <span>BOOK SESSION</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= PRICING & MEMBERSHIP ================= -->
+  <section id="pricing" class="py-24 bg-zinc-900/40 relative border-t border-zinc-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-amber-500 text-xs font-bold tracking-widest uppercase">MEMBERSHIP OPTIONS</span>
+        <h2 class="font-display font-black text-3xl sm:text-5xl text-white mt-2 mb-4">
+          INVEST IN YOUR STRENGTH
+        </h2>
+        <p class="text-zinc-400 text-base sm:text-lg mb-8">
+          Simple, transparent pricing with no hidden registration fees. Choose the membership that fits your training schedule.
+        </p>
+
+        <!-- Billing Toggle -->
+        <div class="inline-flex items-center gap-3 p-1.5 rounded-full bg-zinc-900 border border-zinc-800">
+          <button id="toggleMonthly" onclick="setBilling('monthly')" class="px-5 py-2 rounded-full text-xs font-bold transition-all bg-amber-500 text-zinc-950">
+            Monthly
+          </button>
+          <button id="toggleAnnual" onclick="setBilling('annual')" class="px-5 py-2 rounded-full text-xs font-bold transition-all text-zinc-400 hover:text-white flex items-center gap-1.5">
+            <span>Annual</span>
+            <span class="px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-400 text-[10px] uppercase font-extrabold">Save 25%</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+        
+        <!-- Day Pass / Basic -->
+        <div class="glass-card rounded-2xl p-8 flex flex-col justify-between hover:border-zinc-700 transition-all">
+          <div>
+            <div class="text-xs font-bold text-zinc-400 uppercase tracking-widest mb-2">STARTER</div>
+            <h3 class="font-display font-bold text-2xl text-white mb-4">Day Pass / Basic</h3>
+            <div class="flex items-baseline gap-1 mb-6">
+              <span class="font-display font-black text-4xl text-amber-500" id="price-basic">2,500 ETB</span>
+              <span class="text-zinc-400 text-sm" id="period-basic">/ month</span>
+            </div>
+            <ul class="space-y-3 mb-8 text-sm text-zinc-300">
+              <li class="flex items-center gap-2.5">
+                <i class="fa-solid fa-check text-amber-500 text-xs"></i>
+                <span>Full Access to Gym Floor &amp; Weights</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <i class="fa-solid fa-check text-amber-500 text-xs"></i>
+                <span>Locker Room &amp; Shower Access</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <i class="fa-solid fa-check text-amber-500 text-xs"></i>
+                <span>Standard Opening Hours Access</span>
+              </li>
+              <li class="flex items-center gap-2.5 opacity-50">
+                <i class="fa-solid fa-xmark text-zinc-600 text-xs"></i>
+                <span>Personal Trainer Coaching Sessions</span>
+              </li>
+              <li class="flex items-center gap-2.5 opacity-50">
+                <i class="fa-solid fa-xmark text-zinc-600 text-xs"></i>
+                <span>Steam &amp; Sauna Access</span>
+              </li>
+            </ul>
+          </div>
+          <button 
+            onclick="openJoinModal('Basic Plan')"
+            class="w-full py-3 rounded-xl font-bold text-sm bg-zinc-800 hover:bg-zinc-700 text-zinc-200 transition-colors"
+          >
+            SELECT BASIC PLAN
+          </button>
+        </div>
+
+        <!-- Pro Membership (Featured) -->
+        <div class="glass-card rounded-2xl p-8 flex flex-col justify-between border-2 border-amber-500/80 relative shadow-2xl shadow-amber-500/10 scale-105">
+          <div class="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gradient-to-r from-amber-500 to-amber-600 text-zinc-950 font-black text-xs uppercase tracking-wider shadow-md">
+            MOST POPULAR
+          </div>
+          <div>
+            <div class="text-xs font-bold text-amber-400 uppercase tracking-widest mb-2 mt-2">PRO ATHLETE</div>
+            <h3 class="font-display font-bold text-2xl text-white mb-4">PRO Membership</h3>
+            <div class="flex items-baseline gap-1 mb-6">
+              <span class="font-display font-black text-4xl text-amber-400" id="price-pro">4,500 ETB</span>
+              <span class="text-zinc-400 text-sm" id="period-pro">/ month</span>
+            </div>
+            <ul class="space-y-3 mb-8 text-sm text-zinc-200">
+              <li class="flex items-center gap-2.5">
+                <i class="fa-solid fa-check text-amber-400 text-xs"></i>
+                <span class="font-semibold">Unlimited 7-Day Gym Floor Access</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <i class="fa-solid fa-check text-amber-400 text-xs"></i>
+                <span>Full Steam &amp; Sauna Spa Access</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <i class="fa-solid fa-check text-amber-400 text-xs"></i>
+                <span>Initial Fitness Assessment &amp; InBody Scan</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <i class="fa-solid fa-check text-amber-400 text-xs"></i>
+                <span>Custom Nutrition &amp; Macro Plan</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <i class="fa-solid fa-check text-amber-400 text-xs"></i>
+                <span>2 Free Personal Trainer Consultations</span>
+              </li>
+            </ul>
+          </div>
+          <button 
+            onclick="openJoinModal('PRO Membership Plan')"
+            class="w-full py-3.5 rounded-xl font-bold text-sm bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-zinc-950 shadow-lg shadow-amber-500/25 transition-all"
+          >
+            CLAIM PRO MEMBERSHIP
+          </button>
+        </div>
+
+        <!-- VIP Elite Pass -->
+        <div class="glass-card rounded-2xl p-8 flex flex-col justify-between hover:border-zinc-700 transition-all">
+          <div>
+            <div class="text-xs font-bold text-zinc-400 uppercase tracking-widest mb-2">ULTIMATE</div>
+            <h3 class="font-display font-bold text-2xl text-white mb-4">VIP Elite Pass</h3>
+            <div class="flex items-baseline gap-1 mb-6">
+              <span class="font-display font-black text-4xl text-amber-500" id="price-vip">8,000 ETB</span>
+              <span class="text-zinc-400 text-sm" id="period-vip">/ month</span>
+            </div>
+            <ul class="space-y-3 mb-8 text-sm text-zinc-300">
+              <li class="flex items-center gap-2.5">
+                <i class="fa-solid fa-check text-amber-500 text-xs"></i>
+                <span>Everything in PRO Membership</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <i class="fa-solid fa-check text-amber-500 text-xs"></i>
+                <span class="font-semibold text-amber-400">8 Personal Trainer Sessions / Month</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <i class="fa-solid fa-check text-amber-500 text-xs"></i>
+                <span>Private VIP Locker &amp; Towel Service</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <i class="fa-solid fa-check text-amber-500 text-xs"></i>
+                <span>Priority Access &amp; Guest Passes (2/mo)</span>
+              </li>
+            </ul>
+          </div>
+          <button 
+            onclick="openJoinModal('VIP Elite Plan')"
+            class="w-full py-3 rounded-xl font-bold text-sm bg-zinc-800 hover:bg-zinc-700 text-zinc-200 transition-colors"
+          >
+            SELECT VIP PLAN
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= MOTIVATIONAL BANNER ================= -->
+  <section class="py-20 relative overflow-hidden bg-gradient-to-r from-amber-600 via-amber-500 to-amber-600 text-zinc-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+      <h2 class="font-display font-black text-3xl sm:text-5xl lg:text-6xl tracking-tight leading-tight uppercase mb-4">
+        "THE ONLY BAD WORKOUT IS THE ONE THAT DIDN'T HAPPEN."
+      </h2>
+      <p class="font-bold text-lg sm:text-xl tracking-wider text-zinc-900 mb-8 uppercase">
+        NO EXCUSES • AK GYM ADDIS ABABA
+      </p>
+      <button 
+        onclick="openJoinModal('Motivational Banner Trial')"
+        class="px-8 py-4 rounded-xl font-black text-sm bg-zinc-950 text-white hover:bg-zinc-900 shadow-2xl transition-all"
+      >
+        START YOUR TRANSFORMATION TODAY
+      </button>
+    </div>
+  </section>
+
+  <!-- ================= GALLERY SECTION ================= -->
+  <section id="gallery" class="py-24 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-amber-500 text-xs font-bold tracking-widest uppercase">OUR SANCTUARY</span>
+        <h2 class="font-display font-black text-3xl sm:text-5xl text-white mt-2 mb-4">
+          AK GYM FLOOR &amp; ATMOSPHERE
+        </h2>
+        <p class="text-zinc-400 text-base sm:text-lg">
+          Take a look inside our high-octane fitness center located in Bole Medhanialem.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
+        
+        <div class="relative group h-64 sm:h-72 rounded-2xl overflow-hidden cursor-pointer" onclick="openLightbox('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=1200', 'Free Weight & Dumbbell Zone')">
+          <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=600" alt="Free Weight Zone" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity"></div>
+          <div class="absolute bottom-4 left-4 font-bold text-sm text-white flex items-center gap-2">
+            <i class="fa-solid fa-expand text-amber-400"></i>
+            <span>Free Weight Zone</span>
+          </div>
+        </div>
+
+        <div class="relative group h-64 sm:h-72 rounded-2xl overflow-hidden cursor-pointer" onclick="openLightbox('https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&q=80&w=1200', 'Heavy Power Racks & Squat Platforms')">
+          <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&q=80&w=600" alt="Power Racks" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity"></div>
+          <div class="absolute bottom-4 left-4 font-bold text-sm text-white flex items-center gap-2">
+            <i class="fa-solid fa-expand text-amber-400"></i>
+            <span>Power Squat Racks</span>
+          </div>
+        </div>
+
+        <div class="relative group h-64 sm:h-72 rounded-2xl overflow-hidden cursor-pointer" onclick="openLightbox('https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&q=80&w=1200', 'Cardio Treadmill Suite')">
+          <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&q=80&w=600" alt="Cardio Suite" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity"></div>
+          <div class="absolute bottom-4 left-4 font-bold text-sm text-white flex items-center gap-2">
+            <i class="fa-solid fa-expand text-amber-400"></i>
+            <span>Cardio Suite</span>
+          </div>
+        </div>
+
+        <div class="relative group h-64 sm:h-72 rounded-2xl overflow-hidden cursor-pointer" onclick="openLightbox('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&q=80&w=1200', 'Personal Coaching Sessions')">
+          <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&q=80&w=600" alt="Personal Coaching" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity"></div>
+          <div class="absolute bottom-4 left-4 font-bold text-sm text-white flex items-center gap-2">
+            <i class="fa-solid fa-expand text-amber-400"></i>
+            <span>Personal Coaching</span>
+          </div>
+        </div>
+
+        <div class="relative group h-64 sm:h-72 rounded-2xl overflow-hidden cursor-pointer" onclick="openLightbox('https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&q=80&w=1200', 'Steam Room & Recovery Spa')">
+          <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&q=80&w=600" alt="Recovery Spa" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity"></div>
+          <div class="absolute bottom-4 left-4 font-bold text-sm text-white flex items-center gap-2">
+            <i class="fa-solid fa-expand text-amber-400"></i>
+            <span>Recovery Steam Spa</span>
+          </div>
+        </div>
+
+        <div class="relative group h-64 sm:h-72 rounded-2xl overflow-hidden cursor-pointer" onclick="openLightbox('https://images.unsplash.com/photo-1534367507873-d2d7e24c797f?auto=format&fit=crop&q=80&w=1200', 'Kettlebell & Functional HIIT Area')">
+          <img src="https://images.unsplash.com/photo-1534367507873-d2d7e24c797f?auto=format&fit=crop&q=80&w=600" alt="Functional Turf" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity"></div>
+          <div class="absolute bottom-4 left-4 font-bold text-sm text-white flex items-center gap-2">
+            <i class="fa-solid fa-expand text-amber-400"></i>
+            <span>Functional HIIT Turf</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= TESTIMONIALS ================= -->
+  <section id="testimonials" class="py-24 bg-zinc-900/40 relative border-t border-zinc-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-amber-500 text-xs font-bold tracking-widest uppercase">REAL RESULTS</span>
+        <h2 class="font-display font-black text-3xl sm:text-5xl text-white mt-2 mb-4">
+          MEMBER REVIEWS &amp; STORIES
+        </h2>
+        <p class="text-zinc-400 text-base sm:text-lg">
+          See what our members in Addis Ababa say about their journey at AK GYM.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <div class="glass-card rounded-2xl p-8 relative flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-1 text-amber-400 mb-4">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-zinc-300 text-sm leading-relaxed mb-6 italic">
+              "AK GYM is hands down the cleanest and best-equipped gym in Bole. Coach Robel helped me lose 14kg in 4 months while building genuine strength."
+            </p>
+          </div>
+          <div class="flex items-center gap-3">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=150" alt="Abebe M." class="w-12 h-12 rounded-full object-cover border border-amber-500/40">
+            <div>
+              <div class="font-bold text-sm text-white">Abebe M.</div>
+              <div class="text-xs text-zinc-400">Pro Member • 1 Year</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-card rounded-2xl p-8 relative flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-1 text-amber-400 mb-4">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-zinc-300 text-sm leading-relaxed mb-6 italic">
+              "As a woman training in Addis, finding a supportive and non-intimidating environment was key. Coach Selam's personal training sessions are top tier!"
+            </p>
+          </div>
+          <div class="flex items-center gap-3">
+            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&q=80&w=150" alt="Tigist G." class="w-12 h-12 rounded-full object-cover border border-amber-500/40">
+            <div>
+              <div class="font-bold text-sm text-white">Tigist G.</div>
+              <div class="text-xs text-zinc-400">VIP Member • 8 Months</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-card rounded-2xl p-8 relative flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-1 text-amber-400 mb-4">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-zinc-300 text-sm leading-relaxed mb-6 italic">
+              "The machinery quality is unmatched in Ethiopia. Smooth cable crossovers, heavy dumbbells, and the steam sauna after leg day is pure heaven."
+            </p>
+          </div>
+          <div class="flex items-center gap-3">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=150" alt="Yonas K." class="w-12 h-12 rounded-full object-cover border border-amber-500/40">
+            <div>
+              <div class="font-bold text-sm text-white">Yonas K.</div>
+              <div class="text-xs text-zinc-400">Pro Member • 6 Months</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= FAQ SECTION ================= -->
+  <section id="faq" class="py-24 relative">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center mb-16">
+        <span class="text-amber-500 text-xs font-bold tracking-widest uppercase">HAVE QUESTIONS?</span>
+        <h2 class="font-display font-black text-3xl sm:text-5xl text-white mt-2 mb-4">
+          FREQUENTLY ASKED QUESTIONS
+        </h2>
+        <p class="text-zinc-400 text-base">
+          Find quick answers about operating hours, personal coaching, and membership options.
+        </p>
+      </div>
+
+      <div class="space-y-4" id="faqAccordion">
+        
+        <!-- FAQ Item 1 -->
+        <div class="glass-card rounded-xl border border-zinc-800 overflow-hidden">
+          <button onclick="toggleFaq(this)" class="w-full p-6 text-left flex items-center justify-between font-bold text-base text-white hover:text-amber-400 transition-colors">
+            <span>What are AK GYM's operating hours?</span>
+            <i class="fa-solid fa-chevron-down text-amber-500 transition-transform duration-300"></i>
+          </button>
+          <div class="hidden p-6 pt-0 text-zinc-400 text-sm border-t border-zinc-800/60 leading-relaxed">
+            AK GYM is open Monday through Saturday from 6:00 AM to 10:00 PM, and Sundays from 8:00 AM to 8:00 PM.
+          </div>
+        </div>
+
+        <!-- FAQ Item 2 -->
+        <div class="glass-card rounded-xl border border-zinc-800 overflow-hidden">
+          <button onclick="toggleFaq(this)" class="w-full p-6 text-left flex items-center justify-between font-bold text-base text-white hover:text-amber-400 transition-colors">
+            <span>Where is AK GYM located in Addis Ababa?</span>
+            <i class="fa-solid fa-chevron-down text-amber-500 transition-transform duration-300"></i>
+          </button>
+          <div class="hidden p-6 pt-0 text-zinc-400 text-sm border-t border-zinc-800/60 leading-relaxed">
+            We are conveniently located in Bole Medhanialem, right near Ednamall in Addis Ababa, Ethiopia. Free parking is available for all members.
+          </div>
+        </div>
+
+        <!-- FAQ Item 3 -->
+        <div class="glass-card rounded-xl border border-zinc-800 overflow-hidden">
+          <button onclick="toggleFaq(this)" class="w-full p-6 text-left flex items-center justify-between font-bold text-base text-white hover:text-amber-400 transition-colors">
+            <span>Do I need prior gym experience to join?</span>
+            <i class="fa-solid fa-chevron-down text-amber-500 transition-transform duration-300"></i>
+          </button>
+          <div class="hidden p-6 pt-0 text-zinc-400 text-sm border-t border-zinc-800/60 leading-relaxed">
+            Not at all! We welcome complete beginners as well as seasoned athletes. Every new member receives an orientation session with a certified coach to learn equipment usage safely.
+          </div>
+        </div>
+
+        <!-- FAQ Item 4 -->
+        <div class="glass-card rounded-xl border border-zinc-800 overflow-hidden">
+          <button onclick="toggleFaq(this)" class="w-full p-6 text-left flex items-center justify-between font-bold text-base text-white hover:text-amber-400 transition-colors">
+            <span>Are personal trainers included with membership?</span>
+            <i class="fa-solid fa-chevron-down text-amber-500 transition-transform duration-300"></i>
+          </button>
+          <div class="hidden p-6 pt-0 text-zinc-400 text-sm border-t border-zinc-800/60 leading-relaxed">
+            General gym floor guidance is always available. PRO Members receive 2 complimentary trainer sessions, and VIP Elite members receive 8 dedicated 1-on-1 personal training packages every month.
+          </div>
+        </div>
+
+        <!-- FAQ Item 5 -->
+        <div class="glass-card rounded-xl border border-zinc-800 overflow-hidden">
+          <button onclick="toggleFaq(this)" class="w-full p-6 text-left flex items-center justify-between font-bold text-base text-white hover:text-amber-400 transition-colors">
+            <span>Is the Steam & Sauna included in all plans?</span>
+            <i class="fa-solid fa-chevron-down text-amber-500 transition-transform duration-300"></i>
+          </button>
+          <div class="hidden p-6 pt-0 text-zinc-400 text-sm border-t border-zinc-800/60 leading-relaxed">
+            Steam and Sauna spa facilities are fully included for PRO and VIP Elite members. Day Pass and Basic members can add single-use spa passes upon entry.
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= CONTACT & LOCATION ================= -->
+  <section id="contact" class="py-24 bg-zinc-900/40 relative border-t border-zinc-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        
+        <!-- Contact Info -->
+        <div>
+          <span class="text-amber-500 text-xs font-bold tracking-widest uppercase">GET IN TOUCH</span>
+          <h2 class="font-display font-black text-3xl sm:text-5xl text-white mt-2 mb-6">
+            VISIT AK GYM TODAY
+          </h2>
+          <p class="text-zinc-400 text-base leading-relaxed mb-8">
+            Have questions about memberships or personal coaching? Drop by our facility in Bole Medhanialem or reach out through phone or message.
+          </p>
+
+          <div class="space-y-6">
+            
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 shrink-0 mt-1">
+                <i class="fa-solid fa-location-dot text-lg"></i>
+              </div>
+              <div>
+                <div class="font-bold text-white text-base">Gym Location</div>
+                <div class="text-zinc-400 text-sm">Bole Medhanialem, Next to Ednamall<br/>Addis Ababa, Ethiopia</div>
+                <a 
+                  href="https://www.google.com/maps/search/?api=1&query=Bole+Medhanialem+Addis+Ababa+Ethiopia" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  class="inline-flex items-center gap-1.5 text-xs font-bold text-amber-400 hover:text-amber-300 mt-2"
+                >
+                  <span>Open in Google Maps</span>
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 shrink-0 mt-1">
+                <i class="fa-solid fa-phone text-lg"></i>
+              </div>
+              <div>
+                <div class="font-bold text-white text-base">Phone &amp; WhatsApp</div>
+                <div class="text-zinc-400 text-sm">+251 911 234 567 / +251 911 987 654</div>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 shrink-0 mt-1">
+                <i class="fa-solid fa-envelope text-lg"></i>
+              </div>
+              <div>
+                <div class="font-bold text-white text-base">Email Enquiries</div>
+                <div class="text-zinc-400 text-sm">info@akgymaddis.com</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="glass-card rounded-2xl p-8 border border-zinc-800">
+          <h3 class="font-display font-bold text-2xl text-white mb-6">Send Us a Message</h3>
+          
+          <form id="contactForm" onsubmit="handleContactSubmit(event)" class="space-y-4">
+            <div>
+              <label class="block text-xs font-bold text-zinc-300 uppercase mb-2">Your Full Name</label>
+              <input 
+                type="text" 
+                required
+                placeholder="e.g. Abebe Bikila" 
+                class="w-full px-4 py-3 rounded-xl bg-zinc-900 border border-zinc-800 text-white placeholder-zinc-500 focus:outline-none focus:border-amber-500 text-sm"
+              />
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-zinc-300 uppercase mb-2">Phone Number</label>
+              <input 
+                type="tel" 
+                required
+                placeholder="0911223344" 
+                class="w-full px-4 py-3 rounded-xl bg-zinc-900 border border-zinc-800 text-white placeholder-zinc-500 focus:outline-none focus:border-amber-500 text-sm"
+              />
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-zinc-300 uppercase mb-2">Message or Goal</label>
+              <textarea 
+                rows="4" 
+                required
+                placeholder="Tell us about your fitness targets..." 
+                class="w-full px-4 py-3 rounded-xl bg-zinc-900 border border-zinc-800 text-white placeholder-zinc-500 focus:outline-none focus:border-amber-500 text-sm"
+              ></textarea>
+            </div>
+
+            <button 
+              type="submit" 
+              class="w-full py-3.5 rounded-xl font-bold text-sm bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-zinc-950 shadow-lg shadow-amber-500/20 transition-all"
+            >
+              SEND INQUIRY
+            </button>
+          </form>
+
+          <div id="contactSuccess" class="hidden p-4 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-400 text-center text-sm font-semibold mt-4">
+            <i class="fa-solid fa-circle-check text-lg mb-1 block"></i>
+            Thank you! Your message has been sent. Our team will contact you shortly.
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="bg-zinc-950 border-t border-zinc-800/80 pt-16 pb-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+        
+        <!-- Col 1: Brand -->
+        <div class="space-y-4 md:col-span-1">
+          <div class="flex items-center gap-3">
+            <div class="w-12 h-12 rounded-xl bg-zinc-900 border border-amber-500/40 p-1 flex items-center justify-center shrink-0">
+              <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=200" alt="AK GYM" class="w-full h-full object-cover rounded-lg">
+            </div>
+            <span class="font-display font-black text-2xl text-white">AK <span class="text-amber-500">GYM</span></span>
+          </div>
+          <p class="text-zinc-400 text-sm leading-relaxed">
+            STRENGTH • DISCIPLINE • RESULTS<br/>
+            Addis Ababa's top fitness destination.
+          </p>
+          <div class="flex items-center gap-3 pt-2 text-zinc-400">
+            <a href="#" aria-label="Facebook" class="w-9 h-9 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center hover:text-amber-400 hover:border-amber-500/40 transition-colors">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="#" aria-label="Instagram" class="w-9 h-9 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center hover:text-amber-400 hover:border-amber-500/40 transition-colors">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="#" aria-label="Telegram" class="w-9 h-9 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center hover:text-amber-400 hover:border-amber-500/40 transition-colors">
+              <i class="fa-brands fa-telegram"></i>
+            </a>
+            <a href="#" aria-label="TikTok" class="w-9 h-9 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center hover:text-amber-400 hover:border-amber-500/40 transition-colors">
+              <i class="fa-brands fa-tiktok"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2: Navigation Links -->
+        <div>
+          <div class="font-display font-bold text-white text-sm uppercase tracking-wider mb-4">Quick Links</div>
+          <ul class="space-y-2 text-sm text-zinc-400">
+            <li><a href="#home" class="hover:text-amber-400 transition-colors">Home Page</a></li>
+            <li><a href="#why-us" class="hover:text-amber-400 transition-colors">Why Choose Us</a></li>
+            <li><a href="#exercises" class="hover:text-amber-400 transition-colors">Workout Library</a></li>
+            <li><a href="#trainers" class="hover:text-amber-400 transition-colors">Personal Coaches</a></li>
+            <li><a href="#pricing" class="hover:text-amber-400 transition-colors">Membership Plans</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Facility Hours -->
+        <div>
+          <div class="font-display font-bold text-white text-sm uppercase tracking-wider mb-4">Opening Hours</div>
+          <ul class="space-y-2 text-sm text-zinc-400">
+            <li class="flex justify-between border-b border-zinc-900 pb-1">
+              <span>Mon - Sat:</span>
+              <span class="text-amber-400 font-semibold">6:00 AM - 10:00 PM</span>
+            </li>
+            <li class="flex justify-between border-b border-zinc-900 pb-1">
+              <span>Sunday:</span>
+              <span class="text-amber-400 font-semibold">8:00 AM - 8:00 PM</span>
+            </li>
+            <li class="pt-2 text-xs text-zinc-500">
+              *Holidays may vary. Steam/sauna active all operational hours.
+            </li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Location -->
+        <div>
+          <div class="font-display font-bold text-white text-sm uppercase tracking-wider mb-4">Branch Address</div>
+          <p class="text-sm text-zinc-400 leading-relaxed mb-4">
+            Bole Medhanialem,<br/>
+            Addis Ababa, Ethiopia
+          </p>
+          <div class="text-xs text-amber-400 font-bold">
+            <i class="fa-solid fa-phone mr-1"></i> +251 911 234 567
+          </div>
+        </div>
+
+      </div>
+
+      <div class="border-t border-zinc-900 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-zinc-500 gap-4">
+        <div>&copy; 2026 AK GYM Addis Ababa. All rights reserved.</div>
+        <div>Built for peak athletic performance &amp; fitness strength.</div>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- ================= JOIN MODAL ================= -->
+  <div id="joinModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 modal-backdrop">
+    <div class="glass-card rounded-2xl border border-zinc-800 max-w-lg w-full p-6 sm:p-8 relative shadow-2xl animate-fade-in">
+      
+      <!-- Close Button -->
+      <button onclick="closeJoinModal()" aria-label="Close modal" class="absolute top-4 right-4 text-zinc-400 hover:text-white p-2">
+        <i class="fa-solid fa-xmark text-xl"></i>
+      </button>
+
+      <!-- Modal Header -->
+      <div class="text-center mb-6">
+        <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 mx-auto mb-3 text-xl">
+          <i class="fa-solid fa-bolt"></i>
+        </div>
+        <h3 class="font-display font-black text-2xl text-white">JOIN AK GYM</h3>
+        <p class="text-xs text-amber-400 font-bold uppercase mt-1" id="selectedPlanTitle">Selected: PRO Membership</p>
+      </div>
+
+      <!-- Modal Form -->
+      <form id="joinForm" onsubmit="handleJoinSubmit(event)" class="space-y-4">
+        <div>
+          <label class="block text-xs font-bold text-zinc-300 uppercase mb-1">Full Name</label>
+          <input type="text" required placeholder="Enter your full name" class="w-full px-4 py-3 rounded-xl bg-zinc-900 border border-zinc-800 text-white placeholder-zinc-500 focus:outline-none focus:border-amber-500 text-sm" />
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-zinc-300 uppercase mb-1">Phone Number (Ethiopia)</label>
+          <input type="tel" required placeholder="0911223344" class="w-full px-4 py-3 rounded-xl bg-zinc-900 border border-zinc-800 text-white placeholder-zinc-500 focus:outline-none focus:border-amber-500 text-sm" />
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-zinc-300 uppercase mb-1">Primary Fitness Goal</label>
+          <select class="w-full px-4 py-3 rounded-xl bg-zinc-900 border border-zinc-800 text-white focus:outline-none focus:border-amber-500 text-sm">
+            <option value="weight-loss">Weight Loss &amp; Fat Burn</option>
+            <option value="muscle-gain">Muscle Hypertrophy &amp; Strength</option>
+            <option value="toning">Body Toning &amp; Fitness</option>
+            <option value="personal-coaching">1-on-1 Personal Coaching</option>
+          </select>
+        </div>
+
+        <button type="submit" class="w-full py-3.5 rounded-xl font-bold text-sm bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-zinc-950 shadow-lg shadow-amber-500/30 transition-all">
+          CONFIRM REGISTRATION
+        </button>
+      </form>
+
+      <div id="joinSuccess" class="hidden p-6 text-center">
+        <i class="fa-solid fa-circle-check text-4xl text-amber-400 mb-3 block"></i>
+        <h4 class="font-display font-bold text-xl text-white mb-2">Registration Confirmed!</h4>
+        <p class="text-sm text-zinc-300">Welcome to AK GYM! Our reception team will call your phone number to activate your pass.</p>
+        <button onclick="closeJoinModal()" class="mt-6 px-6 py-2.5 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-white text-xs font-bold">CLOSE</button>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ================= EXERCISE DETAIL MODAL ================= -->
+  <div id="exerciseModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 modal-backdrop">
+    <div class="glass-card rounded-2xl border border-zinc-800 max-w-2xl w-full p-6 sm:p-8 relative shadow-2xl max-h-[90vh] overflow-y-auto">
+      
+      <button onclick="closeExerciseModal()" aria-label="Close modal" class="absolute top-4 right-4 text-zinc-400 hover:text-white p-2">
+        <i class="fa-solid fa-xmark text-xl"></i>
+      </button>
+
+      <div id="modalExerciseContent">
+        <!-- Injected dynamically -->
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ================= LIGHTBOX MODAL ================= -->
+  <div id="lightboxModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 modal-backdrop" onclick="closeLightbox()">
+    <div class="relative max-w-4xl w-full" onclick="event.stopPropagation()">
+      <button onclick="closeLightbox()" aria-label="Close lightbox" class="absolute -top-10 right-0 text-white hover:text-amber-400 text-2xl">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <img id="lightboxImg" src="" alt="Gallery Preview" class="w-full max-h-[80vh] object-contain rounded-2xl border border-zinc-800">
+      <div id="lightboxCaption" class="text-center text-sm font-bold text-zinc-300 mt-4"></div>
+    </div>
+  </div>
+
+
+  <!-- ================= JAVASCRIPT ES6 ================= -->
+  <script>
+    // Exercise Data
+    const EXERCISES_DATA = [
+      {
+        id: 'bench-press',
+        title: 'Barbell Flat Bench Press',
+        category: 'chest',
+        muscle: 'Chest & Triceps',
+        difficulty: 'Intermediate',
+        equipment: 'Barbell & Bench',
+        image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=600',
+        steps: [
+          'Lie flat on the bench with feet firmly planted on the floor.',
+          'Grasp the barbell slightly wider than shoulder-width with wrists straight.',
+          'Unrack the barbell, lower it under control to mid-chest level.',
+          'Drive up forcefully through your chest and triceps to full extension.'
+        ],
+        tips: 'Keep shoulder blades retracted and avoid letting your elbows flare out 90 degrees.',
+        sets: '4 sets of 8-12 reps'
+      },
+      {
+        id: 'lat-pulldown',
+        title: 'Wide Grip Lat Pulldown',
+        category: 'back',
+        muscle: 'Lats & Upper Back',
+        difficulty: 'Beginner',
+        equipment: 'Cable Machine',
+        image: 'https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&q=80&w=600',
+        steps: [
+          'Adjust thigh pads firmly to lock yourself into the cable seat.',
+          'Grip the wide bar with palms facing forward.',
+          'Pull the bar down toward upper chest while squeezing lat muscles.',
+          'Slowly return the bar to top position with controlled resistance.'
+        ],
+        tips: 'Avoid swinging back excessively to generate momentum.',
+        sets: '3 sets of 10-12 reps'
+      },
+      {
+        id: 'barbell-squat',
+        title: 'Barbell Back Squat',
+        category: 'legs',
+        muscle: 'Quadriceps & Glutes',
+        difficulty: 'Advanced',
+        equipment: 'Power Rack & Barbell',
+        image: 'https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&q=80&w=600',
+        steps: [
+          'Position barbell on upper trapezius muscles.',
+          'Unrack with feet shoulder-width apart, toes turned slightly out.',
+          'Hinge hips backward and lower thighs parallel to the ground or deeper.',
+          'Drive through heels back up to starting standing position.'
+        ],
+        tips: 'Keep chest upright and knees tracking aligned over toes.',
+        sets: '4 sets of 6-10 reps'
+      },
+      {
+        id: 'dumbell-curl',
+        title: 'Seated Incline Dumbbell Curls',
+        category: 'chest',
+        muscle: 'Biceps Hypertrophy',
+        difficulty: 'Beginner',
+        equipment: 'Dumbbells & Bench',
+        image: 'https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&q=80&w=600',
+        steps: [
+          'Sit back on bench inclined at 60 degrees holding dumbbells.',
+          'Let arms hang fully stretched with palms facing forward.',
+          'Curl dumbbells upward while keeping upper arms completely stationary.',
+          'Squeeze biceps hard at top before slowly lowering.'
+        ],
+        tips: 'Maintains maximum stretch on the long head of the bicep.',
+        sets: '3 sets of 12 reps'
+      },
+      {
+        id: 'kettlebell-swing',
+        title: 'Kettlebell Explosive Swings',
+        category: 'hiit',
+        muscle: 'Hamstrings & Cardio',
+        difficulty: 'Intermediate',
+        equipment: 'Kettlebell',
+        image: 'https://images.unsplash.com/photo-1534367507873-d2d7e24c797f?auto=format&fit=crop&q=80&w=600',
+        steps: [
+          'Stand with feet wider than shoulder-width holding kettlebell with both hands.',
+          'Hinge forward at hips and swing kettlebell between legs.',
+          'Explode hips forward powerfully to drive kettlebell to shoulder height.',
+          'Allow kettlebell to swing back naturally without squatting.'
+        ],
+        tips: 'Movement is a hip hinge power snap, not a shoulder front raise.',
+        sets: '4 sets of 45 seconds'
+      },
+      {
+        id: 'plank-hold',
+        title: 'Core Stability Forearm Plank',
+        category: 'back',
+        muscle: 'Abdominals & Core',
+        difficulty: 'Beginner',
+        equipment: 'Bodyweight',
+        image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&q=80&w=600',
+        steps: [
+          'Place forearms on floor shoulder-width apart.',
+          'Extend legs back with feet together, supporting body on toes.',
+          'Keep spine in neutral straight line from head to heels.',
+          'Brace abdominal wall tightly for duration.'
+        ],
+        tips: 'Do not let lower back sag or hips lift too high.',
+        sets: '3 sets of 60 seconds'
+      }
+    ];
+
+    let currentBilling = 'monthly';
+
+    document.addEventListener('DOMContentLoaded', () => {
+      renderExercises('all');
+      initScrollHeader();
+    });
+
+    // Header Scroll Effect
+    function initScrollHeader() {
+      const navbar = document.getElementById('navbar');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+          navbar.classList.add('glass-nav', 'py-3');
+          navbar.classList.remove('py-4');
+        } else {
+          navbar.classList.remove('glass-nav', 'py-3');
+          navbar.classList.add('py-4');
+        }
+      });
+    }
+
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const menuIcon = document.getElementById('menuIcon');
+
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', () => {
+        const isHidden = mobileMenu.classList.contains('hidden');
+        if (isHidden) {
+          mobileMenu.classList.remove('hidden');
+          menuIcon.className = 'fa-solid fa-xmark text-xl';
+        } else {
+          mobileMenu.classList.add('hidden');
+          menuIcon.className = 'fa-solid fa-bars text-xl';
+        }
+      });
+    }
+
+    function closeMobileMenu() {
+      if (mobileMenu) {
+        mobileMenu.classList.add('hidden');
+        if (menuIcon) menuIcon.className = 'fa-solid fa-bars text-xl';
+      }
+    }
+
+    // Render Exercises Grid
+    function renderExercises(category) {
+      const grid = document.getElementById('exerciseGrid');
+      if (!grid) return;
+
+      const filtered = category === 'all' 
+        ? EXERCISES_DATA 
+        : EXERCISES_DATA.filter(e => e.category === category);
+
+      grid.innerHTML = filtered.map(item => `
+        <div class="glass-card rounded-2xl overflow-hidden group hover:border-amber-500/50 transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="relative h-48 overflow-hidden">
+              <img src="${item.image}" alt="${item.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-zinc-950/80 border border-zinc-700 text-amber-400 font-bold text-[10px] uppercase">
+                ${item.muscle}
+              </span>
+            </div>
+            <div class="p-6">
+              <h3 class="font-display font-bold text-xl text-white mb-2">${item.title}</h3>
+              <div class="flex items-center gap-4 text-xs text-zinc-400 mb-4">
+                <span><i class="fa-solid fa-layer-group text-amber-500 mr-1"></i>${item.difficulty}</span>
+                <span><i class="fa-solid fa-toolbox text-amber-500 mr-1"></i>${item.equipment}</span>
+              </div>
+            </div>
+          </div>
+          <div class="p-6 pt-0">
+            <button 
+              onclick="openExerciseModal('${item.id}')"
+              class="w-full py-2.5 rounded-xl font-bold text-xs bg-zinc-800 hover:bg-amber-500 hover:text-zinc-950 text-zinc-200 transition-colors flex items-center justify-center gap-2"
+            >
+              <i class="fa-solid fa-book-open"></i>
+              <span>VIEW GUIDE &amp; TIPS</span>
+            </button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // Filter Exercises
+    function filterExercises(category) {
+      document.querySelectorAll('.exercise-filter-btn').forEach(btn => {
+        if (btn.getAttribute('data-category') === category) {
+          btn.className = 'exercise-filter-btn px-5 py-2.5 rounded-full text-xs font-bold transition-all bg-amber-500 text-zinc-950 shadow-md shadow-amber-500/20';
+        } else {
+          btn.className = 'exercise-filter-btn px-5 py-2.5 rounded-full text-xs font-bold transition-all bg-zinc-800 text-zinc-300 hover:bg-zinc-700';
+        }
+      });
+      renderExercises(category);
+    }
+
+    // Exercise Modal Logic
+    function openExerciseModal(id) {
+      const item = EXERCISES_DATA.find(e => e.id === id);
+      if (!item) return;
+
+      const modalContent = document.getElementById('modalExerciseContent');
+      modalContent.innerHTML = `
+        <div class="relative h-56 rounded-xl overflow-hidden mb-6">
+          <img src="${item.image}" alt="${item.title}" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/40 to-transparent"></div>
+          <div class="absolute bottom-4 left-4">
+            <span class="px-2.5 py-1 rounded bg-amber-500 text-zinc-950 font-extrabold text-[10px] uppercase mr-2">${item.muscle}</span>
+            <span class="text-xs text-zinc-300 font-bold">${item.sets}</span>
+          </div>
+        </div>
+
+        <h3 class="font-display font-black text-2xl text-white mb-2">${item.title}</h3>
+        
+        <div class="mb-6 space-y-2">
+          <h4 class="font-bold text-sm text-amber-400 uppercase tracking-wider">Step-by-Step Cues:</h4>
+          <ol class="list-decimal list-inside space-y-1.5 text-sm text-zinc-300">
+            ${item.steps.map(step => `<li>${step}</li>`).join('')}
+          </ol>
+        </div>
+
+        <div class="p-4 rounded-xl bg-amber-500/10 border border-amber-500/20 text-xs text-zinc-300 mb-6">
+          <strong class="text-amber-400 block mb-1">PRO FORM TIP:</strong>
+          ${item.tips}
+        </div>
+
+        <button onclick="closeExerciseModal()" class="w-full py-3 rounded-xl font-bold text-xs bg-zinc-800 hover:bg-zinc-700 text-white">
+          GOT IT
+        </button>
+      `;
+
+      document.getElementById('exerciseModal').classList.remove('hidden');
+    }
+
+    function closeExerciseModal() {
+      document.getElementById('exerciseModal').classList.add('hidden');
+    }
+
+    // Join Modal Logic
+    function openJoinModal(planName = 'PRO Membership') {
+      document.getElementById('selectedPlanTitle').innerText = `Selected: ${planName}`;
+      document.getElementById('joinForm').classList.remove('hidden');
+      document.getElementById('joinSuccess').classList.add('hidden');
+      document.getElementById('joinModal').classList.remove('hidden');
+    }
+
+    function closeJoinModal() {
+      document.getElementById('joinModal').classList.add('hidden');
+    }
+
+    function handleJoinSubmit(e) {
+      e.preventDefault();
+      document.getElementById('joinForm').classList.add('hidden');
+      document.getElementById('joinSuccess').classList.remove('hidden');
+    }
+
+    // Contact Form Logic
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      document.getElementById('contactForm').reset();
+      const alert = document.getElementById('contactSuccess');
+      alert.classList.remove('hidden');
+      setTimeout(() => alert.classList.add('hidden'), 5000);
+    }
+
+    // Lightbox Logic
+    function openLightbox(src, caption) {
+      document.getElementById('lightboxImg').src = src;
+      document.getElementById('lightboxCaption').innerText = caption || '';
+      document.getElementById('lightboxModal').classList.remove('hidden');
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightboxModal').classList.add('hidden');
+    }
+
+    // FAQ Accordion Toggle
+    function toggleFaq(btn) {
+      const content = btn.nextElementSibling;
+      const icon = btn.querySelector('i');
+      const isHidden = content.classList.contains('hidden');
+
+      // Close all other FAQ items
+      document.querySelectorAll('#faqAccordion > div').forEach(div => {
+        const c = div.children[1];
+        const ic = div.querySelector('button i');
+        if (c) c.classList.add('hidden');
+        if (ic) ic.style.transform = 'rotate(0deg)';
+      });
+
+      if (isHidden) {
+        content.classList.remove('hidden');
+        icon.style.transform = 'rotate(180deg)';
+      }
+    }
+
+    // Billing Toggle logic
+    function setBilling(type) {
+      currentBilling = type;
+      const btnM = document.getElementById('toggleMonthly');
+      const btnA = document.getElementById('toggleAnnual');
+
+      if (type === 'annual') {
+        btnA.className = 'px-5 py-2 rounded-full text-xs font-bold transition-all bg-amber-500 text-zinc-950 flex items-center gap-1.5';
+        btnM.className = 'px-5 py-2 rounded-full text-xs font-bold transition-all text-zinc-400 hover:text-white';
+        
+        document.getElementById('price-basic').innerText = '1,875 ETB';
+        document.getElementById('price-pro').innerText = '3,375 ETB';
+        document.getElementById('price-vip').innerText = '6,000 ETB';
+
+        document.getElementById('period-basic').innerText = '/ month (billed yearly)';
+        document.getElementById('period-pro').innerText = '/ month (billed yearly)';
+        document.getElementById('period-vip').innerText = '/ month (billed yearly)';
+      } else {
+        btnM.className = 'px-5 py-2 rounded-full text-xs font-bold transition-all bg-amber-500 text-zinc-950';
+        btnA.className = 'px-5 py-2 rounded-full text-xs font-bold transition-all text-zinc-400 hover:text-white flex items-center gap-1.5';
+
+        document.getElementById('price-basic').innerText = '2,500 ETB';
+        document.getElementById('price-pro').innerText = '4,500 ETB';
+        document.getElementById('price-vip').innerText = '8,000 ETB';
+
+        document.getElementById('period-basic').innerText = '/ month';
+        document.getElementById('period-pro').innerText = '/ month';
+        document.getElementById('period-vip').innerText = '/ month';
+      }
+    }
+  </script>
+</body>
+</html>
